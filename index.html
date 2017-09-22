@@ -5,9 +5,57 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
     <title>List sorter</title>
 </head>
 <body>
-    
+<div id="users">
+
+    <!-- class="search" automagically makes an input a search field. -->
+    <input class="search" placeholder="Search" />
+    <!-- class="sort" automagically makes an element a sort buttons. The date-sort value decides what to sort by. -->
+    <button class="sort" data-sort="name">
+        Sort
+    </button>
+
+    <!-- Child elements of container with class="list" becomes list items -->
+    <ul class="list">
+        <li>
+            <div>
+                <!-- The innerHTML of children with class="name" becomes this items "name" value -->
+                <h3 class="name">Jonny Stromberg</h3>
+                <p class="born">1986</p>
+            </div>
+        </li>
+        <li>
+            <div>
+                <h3 class="name">Jonas Arnklint</h3>
+                <p class="born">1985</p>
+            </div>
+        </li>
+        <li>
+            <div>
+                <h3 class="name">Martina Elm</h3>
+                <p class="born">1986</p>
+            </div>
+        </li>
+        <li>
+            <div>
+                <h3 class="name">Gustaf Lindqvist</h3>
+                <p class="born">1983</p>
+            </div>
+        </li>
+    </ul>
+
+</div>
+<script>
+    var options = {
+        valueNames: [ 'name', 'born' ]
+    };
+
+    var userList = new List('users', options);
+</script>
+
 </body>
 </html>
